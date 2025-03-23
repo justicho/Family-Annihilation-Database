@@ -10,6 +10,7 @@ Family annihilation, or familicide, is a type of murder or murder-suicide in whi
 ## Technologies Used
 
 MySQL: For database creation, storage, and query execution.
+
 MySQL Workbench: As the graphical interface for database management and development.
 
 ## Setup Instructions
@@ -27,9 +28,9 @@ MySQL Workbench: As the graphical interface for database management and developm
 
 With the database set up, you can now execute queries to gain insights from the data, including analysis of attributes like gender, age range, suspect status (such as whether they were killed, arrested, or committed suicide), the number of victims killed, and more.  Utilize the provided SQL script examples as a starting point. 
 
-### Querry Example
+### Querry Example From SQL Script
 
-- **Query Example**: Calculate the distribution of incidents by suspect's gender, status, and age range, showing both counts and percentages within the dataset:
+- Calculate the distribution of incidents by suspect's gender, status, and age range, showing both counts and percentages within the dataset:
   ```sql
   SELECT 
     suspectGender,
