@@ -40,6 +40,9 @@ With the database set up, you can now execute queries to gain insights from the 
   FROM incidents
   GROUP BY suspectGender, suspectStatus, suspectAgeRange;
 
+QUERRY OUTPUT:
+
+![image alt](https://github.com/justicho/Family-Annihilation-Database/blob/a23ce6a6e197b6ea041c7f15336d2f636f56e878/Querry%20Example.png)
 
 ## Authors/Contributors
 
