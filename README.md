@@ -18,9 +18,35 @@ MySQL Workbench: As the graphical interface for database management and developm
 2. **Clone the repository**:
    ```bash
    git clone https://github.com/justicho/Family-Annihilation-Database.git
-3. Open MySQL Workbench and connect to your MySQL server.
-4. Create the database schema using provided SQL scripts.
-5. Use the Workbench Data Import Wizard to import filtered CSV data from Gun Violence Archive into corresponding tables.
-6. 
+3. Create Database Schema:
+   - Open a new SQL script window in MySQL Workbench and create the "familyannihilationdb" schema.
+   - Execute the `familyAnnihilationDB.sql` script to configure the database schema.
+   - Use the MySQL Workbench Data Import Wizard to load your CSV files into the corresponding tables (e.g., "malelist," "femalelist"). These files should contain the filtered data from the Gun Violence Archive. Note that besides the "incidents" table, all other filtered lists only need to import the `IncidentID`s.
+
+## Explore and Analyze
+
+With the database set up, you can now execute queries to gain insights from the data, including analysis of attributes like gender, age range, suspect status (such as whether they were killed, arrested, or committed suicide), the number of victims killed, and more.  Utilize the provided SQL script examples as a starting point. 
+
+### Querry Example
+
+- **Query Example**: Calculate the distribution of incidents by suspect's gender, status, and age range, showing both counts and percentages within the dataset:
+  ```sql
+  SELECT 
+    suspectGender,
+    suspectStatus,
+    suspectAgeRange,
+    COUNT(*) AS Count,
+    ROUND((COUNT(*) / (SELECT COUNT(*) FROM incidents) * 100), 2) AS Percentage
+  FROM incidents
+  GROUP BY suspectGender, suspectStatus, suspectAgeRange;
+
+
+## Authors/Contributors
+
+Justin Mingi Choi
+
+## Data Source 
+
+The dataset used in this project is sourced from the [Gun Violence Archive](https://www.gunviolencearchive.org/), a non-profit organization cataloging gun violence incidents across the United States. 
 
 
